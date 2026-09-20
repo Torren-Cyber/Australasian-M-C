@@ -28,15 +28,20 @@ export function PricingSection() {
         {plans.map((plan) => (
           <div
             key={plan.name}
-            className={`flex flex-col rounded-xl border p-6 ${
+            className={`relative flex flex-col rounded-xl border p-6 ${
               plan.highlighted
-                ? "border-accent bg-accent/5"
-                : "border-border bg-background"
+                ? "border-accent bg-surface shadow-[0_0_0_1px_var(--color-accent),0_20px_60px_-30px_var(--color-accent)]"
+                : "border-border bg-surface"
             }`}
           >
+            {plan.highlighted && (
+              <span className="absolute -top-3 left-6 rounded-full bg-accent px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent-foreground">
+                Most popular
+              </span>
+            )}
             <h2 className="text-lg font-medium">{plan.name}</h2>
             <div className="mt-4 flex items-baseline gap-1">
-              <span className="text-4xl font-semibold tracking-tight">
+              <span className="text-4xl font-semibold tracking-tight text-accent">
                 {plan.price}
               </span>
               <span className="text-sm text-muted">{plan.cadence}</span>
@@ -49,7 +54,7 @@ export function PricingSection() {
                 <li key={feature} className="flex items-start gap-2">
                   <span
                     aria-hidden="true"
-                    className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-background"
+                    className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-accent-foreground"
                   >
                     ✓
                   </span>
