@@ -22,6 +22,21 @@ const plans = [
   },
 ]
 
+const addOns = [
+  {
+    name: "Advanced analytics reports",
+    description: "Detailed monthly traffic, conversion, and engagement reporting.",
+  },
+  {
+    name: "Blogs",
+    description: "Ongoing blog setup, publishing, and content updates.",
+  },
+  {
+    name: "eCommerce",
+    description: "Online store with products, cart, and checkout.",
+  },
+]
+
 export function PricingSection() {
   return (
     <section className="mt-12">
@@ -69,6 +84,34 @@ export function PricingSection() {
       <p className="mt-6 text-center text-xs leading-relaxed text-muted">
         {"*Minor changes include text, image, and small layout updates."}
       </p>
+
+      <div className="mt-12">
+        <div className="flex flex-col gap-1 text-center">
+          <h3 className="text-lg font-medium">Website Management add-ons</h3>
+          <p className="text-sm text-muted">
+            Optional extras you can add to your Website Management plan.
+          </p>
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          {addOns.map((addOn) => (
+            <div
+              key={addOn.name}
+              className="flex flex-col rounded-xl border border-border bg-surface p-5"
+            >
+              <span
+                aria-hidden="true"
+                className="mb-3 flex h-6 w-6 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground"
+              >
+                +
+              </span>
+              <h4 className="text-sm font-medium text-accent">{addOn.name}</h4>
+              <p className="mt-2 text-pretty text-sm leading-relaxed text-muted">
+                {addOn.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
