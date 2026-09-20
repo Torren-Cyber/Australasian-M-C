@@ -15,6 +15,7 @@ const plans = [
     features: [
       "Build included",
       "Up to 4 minor* changes per month",
+      "Basic security & firewall",
       "12 month lock-in contract",
     ],
     highlighted: true,
