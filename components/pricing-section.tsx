@@ -1,7 +1,7 @@
 const plans = [
   {
     name: "One-off Build",
-    price: "$500",
+    price: "from $500",
     cadence: "one-time",
     description: "A complete website build, paid once.",
     features: ["Complete website build", "Delivered ready to launch"],
@@ -9,7 +9,7 @@ const plans = [
   },
   {
     name: "Website Management",
-    price: "$350",
+    price: "from $350",
     cadence: "per month",
     description: "Ongoing management with your build included.",
     features: [
