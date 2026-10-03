@@ -106,19 +106,16 @@ img {
   color: var(--ink);
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 3.4rem;
-  height: 2.2rem;
-  border-radius: 0.55rem;
-  border: 1px solid rgba(214, 177, 106, 0.5);
-  background: linear-gradient(135deg, rgba(214, 177, 106, 0.2), rgba(214, 177, 106, 0.05));
-  color: var(--primary-strong);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  box-shadow: 0 12px 25px rgba(214, 177, 106, 0.15);
+.brand-logo {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 2.25rem;
+  }
 }
 
 .main-nav {
