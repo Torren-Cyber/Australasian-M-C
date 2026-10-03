@@ -890,15 +890,34 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
-  gap: 2rem;
+  gap: 2rem 3rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(214, 177, 106, 0.08);
 }
 
-.footer-col {
-  padding-right: 1rem;
+.footer-cta {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.footer-cta .button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.footer-col h4 {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-col h4 {
